@@ -4,6 +4,23 @@ from rest_framework import status
 from .serializers import CVSerializer , CategorySerializer
 from .models import CV, Category
 from django.http import Http404 # 404 hataları için
+from .sentez import get_chatgpt_response # << sentez.py'den import ediyoruz
+import json
+
+class SentezChatView(APIView):
+    def post(self, request, *args, **kwargs):
+        try:
+            data = json.loads(request.body)
+            user_message = data.get('message')
+        except json.JSONDecodeError:
+            return Response({"detail": "Geçersiz JSON formatı."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not user_message:
+            return Response({"detail": "Mesaj boş olamaz."}, status=status.HTTP_400_BAD_REQUEST)
+
+        bot_response = get_chatgpt_response(user_message)
+
+        return Response({"response": bot_response}, status=status.HTTP_200_OK)
 
 class CVUploadView(APIView):
     def post(self, request):

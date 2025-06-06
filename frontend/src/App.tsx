@@ -8,6 +8,8 @@ import CandidateList from './pages/CandidateList';
 import CandidateDetail from './pages/CandidateDetail';
 import AISearch from './pages/AISearch';
 import Settings from './pages/Settings';
+import SentezChat from './pages/Sentez_ai';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route path="categories" element={<Categories />} />
           <Route path="ai-search" element={<AISearch />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="sentez-ai" element={<SentezChat />} />
           <Route path="*" element={<Navigate to="/\" replace />} />
         </Route>
       </Routes>
