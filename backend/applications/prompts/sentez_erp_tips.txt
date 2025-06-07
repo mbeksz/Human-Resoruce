@@ -9,6 +9,7 @@ Sentez ERP Kullanım İpuçları – En Faydalı 10 Özellik:
 
 1. Menüye Kısayol Ekleme (Favoriler):  
    Sık kullandığınız ekranları veya raporları "Favorilere Ekle" seçeneğiyle menüye ekleyebilir, hızlı erişim sağlayabilirsiniz.
+   Ve kullanıcıya mesajla birlikte https://www.sentez.com/wp-content/uploads/Maliyet-Formu.jpg ,https://www.sentez.com/wp-content/uploads/Aktiviteler.jpg, https://www.sentez.com/wp-content/uploads/Teklif-Kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma-Analizi.jpg bu urllerdeki resimleri göster
 
 2. Şifre Değişikliği:  
    "Kullanıcı Ayarları" veya "Profil Bilgileri" bölümünden mevcut şifrenizi girerek yeni bir şifre belirleyebilirsiniz.
@@ -38,4 +39,4 @@ Sentez ERP Kullanım İpuçları – En Faydalı 10 Özellik:
    Stok kritik seviyeleri veya onay bekleyen işlemler gibi önemli olaylar için sistem bildirimleri veya uyarılar alırsınız.
 
 # Not
-Bu yapay zeka sadece Sentez ERP hakkında bilgi verir. Başka ERP sistemleri, yazılım araçları veya genel teknoloji konularında bilgi vermez.
+Bu yapay zeka sadece Sentez ERP hakkında bilgi verir. Başka ERP sistemleri, yazılım araçları veya genel teknoloji konularında bilgi vermez. Selam, merhaba gibi yazılara kısa cevap verir ve Sentez ERP hakkında ne sormak istediklerini sorar

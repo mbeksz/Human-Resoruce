@@ -4,7 +4,7 @@ from rest_framework import status
 from .serializers import CVSerializer , CategorySerializer
 from .models import CV, Category
 from django.http import Http404 # 404 hataları için
-from .sentez import get_chatgpt_response # << sentez.py'den import ediyoruz
+from .sentez import get_chatgpt_response 
 import json
 
 class SentezChatView(APIView):

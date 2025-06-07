@@ -42,7 +42,7 @@ const SentezChat: React.FC = () => {
                             className={`max-w-[70%] px-4 py-2 rounded-lg text-sm ${msg.sender === 'user'
                                 ? 'bg-blue-500 text-white rounded-br-none'
                                 : 'bg-gray-200 text-gray-800 rounded-bl-none'
-                            }`}
+                                }`}
                         >
                             {/* Bot mesajı ise ReactMarkdown kullan, kullanıcı mesajı ise düz metin */}
                             {msg.sender === 'bot' ? (
@@ -51,14 +51,30 @@ const SentezChat: React.FC = () => {
                                     rehypePlugins={[rehypeRaw]}
                                     // Markdown çıktıları için Tailwind CSS sınıflarını özelleştirme
                                     components={{
-                                        h1: ({node, ...props}) => <h1 className="text-xl font-bold mt-4 mb-2" {...props} />,
-                                        h2: ({node, ...props}) => <h2 className="text-lg font-semibold mt-3 mb-1" {...props} />,
-                                        h3: ({node, ...props}) => <h3 className="text-base font-medium mt-2 mb-1" {...props} />,
-                                        p: ({node, ...props}) => <p className="mb-2" {...props} />,
-                                        ul: ({node, ...props}) => <ul className="list-disc list-inside space-y-1 ml-4" {...props} />,
-                                        ol: ({node, ...props}) => <ol className="list-decimal list-inside space-y-1 ml-4" {...props} />,
-                                        li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                                        strong: ({node, ...props}) => <strong className="font-bold" {...props} />,
+                                        h1: ({ node, ...props }) => <h1 className="text-xl font-bold mt-4 mb-2" {...props} />,
+                                        h2: ({ node, ...props }) => <h2 className="text-lg font-semibold mt-3 mb-1" {...props} />,
+                                        h3: ({ node, ...props }) => <h3 className="text-base font-medium mt-2 mb-1" {...props} />,
+                                        p: ({ node, ...props }) => <p className="mb-2" {...props} />,
+                                        ul: ({ node, ...props }) => <ul className="list-disc list-inside space-y-1 ml-4" {...props} />,
+                                        ol: ({ node, ...props }) => <ol className="list-decimal list-inside space-y-1 ml-4" {...props} />,
+                                        li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                                        strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
+                                        img: ({ node, ...props }) => (
+                                            <a href={props.src || ''} target="_blank" rel="noopener noreferrer">
+                                                <img
+                                                    {...props}
+                                                    className="max-w-full h-auto rounded-lg cursor-pointer hover:opacity-80 transition"
+                                                    alt={props.alt || 'image'}
+                                                />
+                                            </a>
+                                        ),
+                                        video: ({ node, ...props }) => (
+                                            <video
+                                                {...props}
+                                                controls
+                                                className="w-full rounded-lg mt-2 mb-2"
+                                            />
+                                        ),
                                         // İsterseniz başka HTML etiketlerini de özelleştirebilirsiniz (tablolar, kod blokları vb.)
                                     }}
                                 >
